@@ -25,8 +25,8 @@ The program can run on four browsers:
 ## Installation
 
 ```bash
-git clone <repository-url>
-cd linkedin-zip-solver
+git clone [<repository-url>](https://github.com/MatthiasHofstede/linkedin_zip_solver)
+cd linkedin_zip_solver
 pip install -e . 
 ```
 
