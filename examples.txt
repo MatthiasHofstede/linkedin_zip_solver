@@ -1,0 +1,11 @@
+#!/bin/bash
+
+python main.py --browser edge --headless False
+python main.py --browser edge --headless True
+python main.py --browser safari --headless False
+python main.py --browser safari --headless False
+python main.py --browser firefox --headless False
+python main.py --browser firefox --headless True
+python main.py --browser chrome --headless True
+python main.py --browser chrome --headless True
+

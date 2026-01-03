@@ -1,0 +1,11 @@
+/zip_solver.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+venv/
+env/
+.env
+*.log
+.vscode/
+.idea
