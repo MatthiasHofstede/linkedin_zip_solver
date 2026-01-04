@@ -3,7 +3,7 @@
 import argparse
 from src.LinkedinZip import ZipSolver 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description='Linkedin Game Solver')
     parser.add_argument('--headless', type=str, default="True", help="Whether to run headless")
     parser.add_argument('--browser', type = str, default = "safari", help = "what browser to run in " )
@@ -14,4 +14,7 @@ if __name__ == "__main__":
     headless = True if args.headless == "True" else False
     game = ZipSolver(url, browser = args.browser, headless = headless)
     game.run()
+
+if __name__ == "__main__":
+    main()
     
