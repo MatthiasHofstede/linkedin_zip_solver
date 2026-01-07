@@ -259,7 +259,7 @@ class ZipSolver:
     def start_game(self):
         """Start the game by clicking the start button"""
         print("Starting game...")
-        
+         
         # Wait for start button and click it
         try:
             start_button = WebDriverWait(self.driver, 30).until(
@@ -267,7 +267,7 @@ class ZipSolver:
             )
             start_button.click()
             print("Start button clicked")
-            
+            self.start_time = time.time()            
             # Wait for the first cell to be visible (game started)
             first_cell = WebDriverWait(self.driver, 30).until(
                 EC.visibility_of_element_located((By.CSS_SELECTOR, "div.trail-cell[data-cell-idx='0']"))
@@ -308,9 +308,10 @@ class ZipSolver:
             body = self.driver.find_element(By.TAG_NAME, "body")
             for key in directions:
                 body.send_keys(key)
-            
+            self.end_time = time.time() 
             print("Solution executed successfully!")
-            time.sleep(5)  # Wait to see results
+            if not self.headless:
+                time.sleep(5)  # Wait to see results
             
         except Exception as e:
             print(f"Error executing solution: {e}")
@@ -346,9 +347,8 @@ class ZipSolver:
 
             print("Step 5: Executing solution")
             self.execute_solution()
-            
             print("Puzzle solved successfully!")
-            
+            print(f"Puzzle finished in {round((self.end_time-self.start_time) * 100, 2)} miliseconds.") 
         except Exception as e:
             print(f"Error during execution: {e}")
             raise
